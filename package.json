@@ -24,7 +24,8 @@
     "lint-ts:fix": "eslint --ext ts .",
     "lint-solc": "solhint 'public/samples/**/*.sol'",
     "prepare": "husky install",
-    "test": "jest"
+    "test": "jest",
+    "generate-cl-node-env-files": "npx ts-node -r tsconfig-paths/register src/scripts/nodes-config/nodes-config.ts"
   },
   "dependencies": {
     "@11ty/eleventy-fetch": "^4.0.0",
@@ -56,9 +57,13 @@
     "@chainlink/solana-sdk": "^0.2.2",
     "@nomicfoundation/hardhat-toolbox": "^2.0.2",
     "@nomiclabs/hardhat-ethers": "^2.2.3",
+    "@octokit/auth-token": "^3.0.1",
+    "@octokit/auth-unauthenticated": "^3.0.2",
     "@openzeppelin/contracts": "^4.9.2",
     "@project-serum/anchor": "^0.26.0",
+    "@types/lodash": "^4.14.182",
     "@types/node": "^20.4.5",
+    "@types/node-fetch": "^2.6.4",
     "@typescript-eslint/eslint-plugin": "^5.62.0",
     "@typescript-eslint/parser": "^5.62.0",
     "astro": "^2.8.1",
@@ -74,6 +79,7 @@
     "husky": "^8.0.3",
     "lint-staged": "^13.2.3",
     "lodash": "^4.17.21",
+    "octokit": "^2.0.7",
     "prettier": "^2.8.8",
     "prettier-plugin-astro": "^0.8.1",
     "prettier-plugin-solidity": "^1.1.3",
