@@ -4,6 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "astro dev",
+    "dev:vercel": "vercel dev",
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
@@ -36,6 +37,7 @@
     "@metamask/detect-provider": "^2.0.0",
     "@metamask/providers": "^10.2.1",
     "@nanostores/preact": "^0.4.1",
+    "@vercel/edge": "^0.3.4",
     "astro-embed": "^0.2.1",
     "clipboard": "^2.0.11",
     "ethers": "^5.7.2",
@@ -84,7 +86,8 @@
     "solhint-plugin-prettier": "^0.0.5",
     "ts-jest": "^29.1.1",
     "tsconfig-paths": "^4.2.0",
-    "typescript": "^5.1.6"
+    "typescript": "^5.1.6",
+    "vercel": "^29.4.0"
   },
   "lint-staged": {
     "*.{css,md,mdx,yml,yaml,astro}": "prettier --write",
