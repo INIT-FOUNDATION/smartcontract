@@ -5,7 +5,7 @@ title: "Migrating from VRF v2"
 ---
 
 import VrfCommon from "@features/vrf/v2-5/VrfCommon.astro"
-import { Aside, CodeSample } from "@components"
+import { Aside, ClickToZoom, CodeSample } from "@components"
 import { Tabs, TabsContent } from "@components/Tabs"
 
 <VrfCommon callout="security" />
@@ -14,7 +14,7 @@ import { Tabs, TabsContent } from "@components/Tabs"
 
 Chainlink VRF v2.5 includes [all the same key benefits as VRF v2](https://blog.chain.link/vrf-v2-mainnet-launch/), along with the following additional benefits and changes:
 
-- Easier upgrades to future versions by using the new `setCoordinator` function
+- Easier upgrades to future versions by using the new `setCoordinator` function, or by using a simplified UI migration from V2.5 to future versions
 - The option to pay for requests in either LINK or native tokens
 - New, flexible request format in `requestRandomWords` to make any future upgrades easier
 
@@ -113,7 +113,7 @@ To modify your existing smart contract code to work with VRF v2.5, complete the 
 
 1.  Add a `VRFConsumerBaseV2Plus` constructor, passing in the LINK token address for the network you're using.
 
-1.  Update your `requestRandomWords` function calls to reflect the new request structure for VRF v2.5. Make sure to include the new `extraArgs` part of the `VRFV2PlusClient.RandomWordsRequest` mapping, and specify whether or not you want to pay for VRF requests using native tokens:
+1.  Update your `requestRandomWords` function calls to reflect the new request structure for VRF v2.5. Make sure to include the new `extraArgs` part of the `VRFV2PlusClient.RandomWordsRequest` mapping, and use `nativePayment` to specify whether or not you want to pay for VRF requests using native tokens:
 
         {/* prettier-ignore */}
         <Tabs sharedStore="feePaymentType" client:visible>
@@ -528,3 +528,9 @@ ConfirmedOwner
 
 </Fragment>
 </TabsContent>
+
+## Future minor version upgrades
+
+After you complete your initial migration from V2, any future upgrades to minor versions of VRF V2.5 follow a simplified process where your subscription, along with its balances, metadata, and consumers, is transferred to the VRF coordinator for the new minor version:
+
+<ClickToZoom src="/images/vrf/v2-5-migration.png" alt="VRF 2.5 migration diagram" />
