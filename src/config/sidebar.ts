@@ -977,6 +977,10 @@ export const SIDEBAR: Partial<Record<Sections, SectionEntry[]>> = {
           ],
         },
         {
+          title: "Best Practices",
+          url: "ccip/best-practices",
+        },
+        {
           title: "Service Limits",
           url: "ccip/service-limits",
         },
@@ -995,19 +999,46 @@ export const SIDEBAR: Partial<Record<Sections, SectionEntry[]>> = {
       ],
     },
     {
-      section: "Guides",
+      section: "Learn",
       contents: [
         {
-          title: "Transfer Tokens",
-          url: "ccip/tutorials/cross-chain-tokens",
+          title: "Key Concepts",
+          url: "ccip/concepts",
         },
         {
-          title: "Transfer Tokens with Data",
-          url: "ccip/tutorials/programmable-token-transfers",
+          title: "Architecture",
+          url: "ccip/architecture",
+        },
+      ],
+    },
+    {
+      section: "Build",
+      contents: [
+        {
+          title: "Acquire Test Tokens",
+          url: "ccip/test-tokens",
         },
         {
-          title: "Transfer Tokens with Data - Defensive Example",
-          url: "ccip/tutorials/programmable-token-transfers-defensive",
+          title: "Cross-chain tokens",
+          url: "ccip/tutorials/transfer-tokens",
+          children: [
+            {
+              title: "Transfer Tokens",
+              url: "ccip/tutorials/cross-chain-tokens",
+            },
+            {
+              title: "Transfer Tokens with Data",
+              url: "ccip/tutorials/programmable-token-transfers",
+            },
+            {
+              title: "Transfer Tokens with Data - Defensive Example",
+              url: "ccip/tutorials/programmable-token-transfers-defensive",
+            },
+            {
+              title: "Transfer USDC with Data",
+              url: "ccip/tutorials/usdc",
+            },
+          ],
         },
         {
           title: "Offchain",
@@ -1024,10 +1055,6 @@ export const SIDEBAR: Partial<Record<Sections, SectionEntry[]>> = {
           ],
         },
         {
-          title: "Transfer USDC with Data",
-          url: "ccip/tutorials/usdc",
-        },
-        {
           title: "Send Arbitrary Data",
           url: "ccip/tutorials/send-arbitrary-data",
         },
@@ -1036,37 +1063,12 @@ export const SIDEBAR: Partial<Record<Sections, SectionEntry[]>> = {
           url: "ccip/tutorials/send-arbitrary-data-receipt-acknowledgment",
         },
         {
-          title: "Manual Execution",
-          url: "ccip/tutorials/manual-execution",
-        },
-        {
           title: "Optimizing Gas Limit Settings in CCIP Messages",
           url: "ccip/tutorials/ccipreceive-gaslimit",
         },
         {
-          title: "Acquire Test Tokens",
-          url: "ccip/test-tokens",
-        },
-      ],
-    },
-    {
-      section: "Concepts",
-      contents: [
-        {
-          title: "Conceptual Overview",
-          url: "ccip/concepts",
-        },
-        {
-          title: "Architecture",
-          url: "ccip/architecture",
-        },
-        {
-          title: "Manual execution",
-          url: "ccip/concepts/manual-execution",
-        },
-        {
-          title: "Best Practices",
-          url: "ccip/best-practices",
+          title: "Manual Execution",
+          url: "ccip/tutorials/manual-execution",
         },
       ],
     },
