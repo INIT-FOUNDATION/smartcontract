@@ -1,9 +1,16 @@
 import { Sections } from "../content/config"
-export type SectionContent = { title: string; url: string; children?: { title: string; url: string }[] }
+import chainlinkLocalAPIReference from "./sidebar/chainlink-local/api-reference.json"
+export type SectionContent = {
+  title: string
+  url: string
+  children?: SectionContent[]
+}
 type SectionEntry = {
   section: string
   contents: SectionContent[]
 }
+
+const chainlinkLocalAPIReferenceTyped = chainlinkLocalAPIReference as SectionEntry
 
 export const SIDEBAR: Partial<Record<Sections, SectionEntry[]>> = {
   dataFeeds: [
@@ -1124,6 +1131,31 @@ export const SIDEBAR: Partial<Record<Sections, SectionEntry[]>> = {
         },
       ],
     },
+  ],
+  chainlinkLocal: [
+    {
+      section: "Chainlink Local",
+      contents: [
+        {
+          title: "Overview",
+          url: "chainlink-local",
+        },
+        {
+          title: "Architecture",
+          url: "chainlink-local/learn/architecture",
+        },
+      ],
+    },
+    {
+      section: "Build",
+      contents: [
+        {
+          title: "Architecture",
+          url: "chainlink-local/build/local-simulator",
+        },
+      ],
+    },
+    { ...chainlinkLocalAPIReferenceTyped },
   ],
   nodeOperator: [
     {
