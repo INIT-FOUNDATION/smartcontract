@@ -4,7 +4,7 @@
   left: 0;
   height: 56px;
   width: 100%;
-  background-color: var(--color-background-secondary);
+  background-color: var(--gray-200);
   color: var(--color-text-secondary);
   display: flex;
   align-items: center;
@@ -28,6 +28,10 @@
   height: 100%;
   width: 100%;
   position: relative;
+  color: var(--gray-600);
+  font-family: Circular, Tahoma, sans-serif;
+  font-size: var(--space-4px);
+  font-weight: 500;
 }
 
 .back {
